@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thesis Search</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Thesis Search</h1>
+    <form method="GET" action="{% url 'thesis_search' %}">
+        <input type="text" name="q" placeholder="Search...">
+        <button type="submit">Search</button>
+    </form>
+
+    {% if query %}
+        <h2>Search Results for "{{ query }}"</h2>
+        {% if results %}
+            <ul>
+                {% for thesis in results %}
+                    <li>
+                        <p>Title: {{ thesis.title }}</p>
+                        <p>Author: {{ thesis.author }}</p>
+                        <p><a href="{% url 'thesis_detail' thesis.pk %}">View details</a></p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No results found for "{{ query }}".</p>
+        {% endif %}
+    {% endif %}
+
+    <p><a href="{% url 'thesis_list' %}">Back to Home Page</a></p>
+
+</body>
+</html>

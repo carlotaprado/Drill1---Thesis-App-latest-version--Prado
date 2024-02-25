@@ -1,0 +1,121 @@
+body { 
+    margin: 0 10%; 
+    padding: 0;
+    font-family: helvetica, sans-serif; 
+}
+
+a { 
+    color: #281bdb;
+    text-decoration: none; 
+}
+
+h1 { 
+    font-weight: normal;
+    border-bottom: 1px solid #bbb;
+    padding: 0 0 10px 0;
+    text-align: center; /* Center the heading */
+}
+
+h2 {
+    font-weight: normal;
+    margin: 30px 0 0;
+}
+
+#content { 
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #bbb;
+    padding: 0 0 10px 0;
+    justify-content: center;
+    margin: 20px 0; /* Add space on the sides */
+}
+
+#search-bar {
+    float: right;
+    margin-top: 10px;
+}
+
+#search-bar input[type="text"] {
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#search-bar input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+#search-bar input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#back-btn {
+    padding: 10px
+
+}
+
+p.date { 
+    color: #ccc;
+    font-family: georgia, serif;
+    font-size: 12px;
+    font-style: italic; 
+}
+
+/* pagination */
+.pagination { 
+    margin-top: 40px; 
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* forms */
+label { 
+    float: left;
+    clear: both;
+    color: #333;
+    margin-bottom: 4px; 
+}
+input, textarea { 
+    clear: both;
+    float: left;
+    margin: 0 0 10px;
+    background: #ededed;
+    border: 0;
+    padding: 6px 10px;
+    font-size: 12px;
+}
+input[type=submit] {
+    font-weight: bold;
+    background: #00abff;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 14px;
+    text-transform: uppercase; 
+}
+.errorlist { 
+    color: #cc0033;
+    float: left;
+    clear: both;
+    padding-left: 10px; 
+}
+
+/* comments */
+.comment {
+    padding: 10px;
+    border: 1px solid #ddd; /* Add border around comments */
+    margin-bottom: 20px; /* Add margin bottom for spacing */
+}
+.comment:nth-child(even) {
+    background: #f9f9f9; /* Alternate background color */
+}
+.comment .info {
+    font-weight: bold;
+    font-size: 12px;
+    color: #666;
+}

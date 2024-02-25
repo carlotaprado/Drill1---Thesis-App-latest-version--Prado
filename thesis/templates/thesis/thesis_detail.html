@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thesis Detail</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Thesis Detail</h1>
+    <p>Title: {{ thesis.title }}</p>
+    <p>Author: {{ thesis.author }}</p>
+    <p>Abstract: {{ thesis.abstract }}</p>
+    <p>Year: {{ thesis.year }}</p>
+
+    <h2>Comments</h2>
+    {% for comment in thesis.comments.all %}
+        <div class="comment">
+            <p>{{ comment.text }}</p>
+            <p class="info">Posted on: {{ comment.created_at }}</p>
+        </div>
+    {% empty %}
+        <p>No comments yet.</p>
+    {% endfor %}
+    
+    <form method="post" action="{% url 'add_comment_to_thesis' thesis.pk %}">
+        {% csrf_token %}
+        <textarea name="comment_text"></textarea><br>
+        <button type="submit">Add Comment</button>
+    </form>
+ 
+    <div id="back-btn">
+        <button onclick="goBack()" class="btn">Back to Previous Page</button>
+    </div>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+</html>
