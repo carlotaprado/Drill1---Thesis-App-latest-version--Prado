@@ -9,7 +9,6 @@
 <body>
     <h1>Thesis List</h1>
     
-    <!-- Search Form at the Top -->
     <div id="search-bar">
         <form method="GET" action="{% url 'thesis_search' %}">
             <input type="text" name="q" placeholder="Search...">
@@ -17,7 +16,6 @@
         </form>
     </div>
 
-    <!-- Thesis List -->
     {% for thesis in page_obj %}
         <div id="content">
             <p>Title: {{ thesis.title }}</p>
