@@ -30,6 +30,5 @@ def add_comment_to_thesis(request, pk):
     if request.method == 'POST':
         text = request.POST.get('comment_text')
         Comment.objects.create(thesis=thesis, text=text)
-        # Redirect to the same page after submitting the comment
         return redirect('thesis_detail', thesis_id=pk)
     return render(request, 'thesis/add_comment_to_thesis.html', {'thesis': thesis})
