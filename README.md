@@ -1,5 +1,5 @@
 Thesis Search App: This Django application provides a platform for searching and managing academic thesis.
-It allows users to explore various thesis, add comments to the selected thesis, track thesis and add through log entries(admin pov).
+It allows users to explore various thesis and add comments to the selected thesis. Also track thesis, add comments and new thesis (admin pov).
 
 Installation: Clone the repository to your local machine (git clone https://github.com/(username)/thesis_search_app.git),
 navigate to the project directory (cd thesis_search_app), create and activate a virtual environment (optional but recommended), 
